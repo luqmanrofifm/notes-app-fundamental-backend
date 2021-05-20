@@ -1,13 +1,24 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable indent */
 
-const { addNoteHandler } = require("./handler");
+const { addNoteHandler, getAllNotesHandler, getNoteByIdHandler } = require("./handler");
 
 const routes = [
-  {method: 'POST',
+  {
+    method: 'POST',
     path: '/notes',
     handler: addNoteHandler,
-    },
+  },
+  {
+    method: 'GET',
+    path: '/notes',
+    handler: getAllNotesHandler
+  },
+  {
+    method: 'GET',
+    path: '/notes/{id}',
+    handler: getNoteByIdHandler
+  }
   ];
 // eslint-disable-next-line eol-last
 module.exports = routes;
